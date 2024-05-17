@@ -26,3 +26,9 @@ $ npm run start:dev
 $ npm run test:watch src/test/articles.controller.spec.ts
 $ npm run test:watch src/test/articles.service.spec.ts
 ```
+
+## Stop docker
+Go to grpc-server folder and enter
+```bash
+$ docker-compose down
+```
