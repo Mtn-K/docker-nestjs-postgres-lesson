@@ -1,4 +1,4 @@
-# Docker - NestJS - PostgreSQL Project
+# DOCKER - NESTJS - POSTGRESQL PROJECT
 
 ## Description
 
