@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db: 
+    container_name: khanh_jwat_db
+    image: postgres:16.2
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - ./.env
+    volumes:
+      - app:/var/lib/postgresql/data
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: khanh_jwat_server
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=test_db
+    ports:
+      - 4000:4000
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./static
+        target: /opt/app/static
+
+volumes:
+  app:
