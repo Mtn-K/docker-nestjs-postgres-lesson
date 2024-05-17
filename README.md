@@ -13,6 +13,8 @@ $ npm install
 ## Running the app
 
 ```bash
+# run PostgreSQL database
+$ docker-compose up -d
 # watch mode
 $ npm run start:dev
 ```
